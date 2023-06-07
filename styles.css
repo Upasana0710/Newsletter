@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    background: rgba(204, 204, 204, 0.89);
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .container ul {
+    padding: 10px 0px;
+  }
+  
+  /* Header */
+  header {
+    background-color: #1d1d1d;
+    color: #fff;
+    padding: 20px 0;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    list-style: none;
+  }
+  
+  .nav-links li {
+    display: inline-block;
+    margin-left: 20px;
+  }
+  
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: #ccc;
+  }
+  
+  .hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://reutersinstitute.politics.ox.ac.uk/sites/default/files/styles/banner/public/2022-05/dnr_2022_banner_10.jpg?itok=kDM0xc6k');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    text-align: center;
+  }
+  
+  .hero-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+    animation: slide-up 0.8s ease-in-out;
+  }
+  
+  .hero-subtitle {
+    font-size: 18px;
+    animation: fade-in 1s ease-in-out;
+  }
+  
+  /* News Section */
+  .news-section {
+    padding: 80px 0;
+  }
+  
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 30px;
+  }
+  
+  @media (min-width: 768px) {
+    .news-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .news-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .news-card {
+    position: relative;
+    border-top: 6px solid #2bb1ff;
+    background-color: #f7f7f7;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(41, 41, 41, 0.1);
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+    cursor: pointer;
+    animation: fade-in 1s ease-in-out;
+  }
+  
+  .news-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .news-card:hover {
+    transform: translateY(-8px);
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.3);
+    filter: brightness(1.0);
+  }
+  
+  .news-card:hover::before {
+    opacity: 1;
+  }
+  
+  .news-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .news-content {
+    padding: 20px;
+  }
+  
+  .news-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .news-description {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #777;
+  }
+  
+  .read-more {
+    display: inline-block;
+    color: #fff;
+    background-color: #2bb1ff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    animation: fade-in 1s ease-in-out;
+  }
+  
+  .read-more:hover {
+    background-color: #1d8ad6;
+    animation: pulse 1s infinite;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slide-up {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
